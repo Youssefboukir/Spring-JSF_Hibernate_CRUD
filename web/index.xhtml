@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Contact</title>
+    </h:head>
+    <h:body>
+        <h:form>  
+
+        <h:dataTable value="#{ContactServices.SelectContact()}" var="s" >
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                    #{s.id}
+            </h:column>
+            <h:column>                   
+                <f:facet name="header">First Name</f:facet>               
+                    #{s.nom}
+            </h:column>
+            <h:column>                   
+                <f:facet name="header">Last Name</f:facet>               
+                    #{s.prenom}
+            </h:column>
+
+            <h:column>                   
+                <f:facet name="header">Email</f:facet>               
+                    #{s.email}
+            </h:column>
+            <h:column>  
+                <f:facet name="header">Delete</f:facet>  
+                <h:commandButton action = "#{ContactServices.Supprimer(s.id)}" value="Delete" class="btn btn-danger">  
+                </h:commandButton>  
+            </h:column> 
+        </h:dataTable>
+        </h:form>
+        <h:form>
+            <h:commandLink id="image-link-id" action="Ajouter.xhtml">  
+                <h:outputText value="Ajouter"></h:outputText>  
+            </h:commandLink>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+          <h3 class="marginLeft12"> Add New Student </h3>
+    <h:form id="studentSaveForm" styleClass="form-horizontal">
+        <h:panelGrid columns="2">
+            <div class="form-group">
+                <h:outputLabel value="Id:" styleClass="control-label" />
+                <div class="col-xs-10">
+                    <h:inputText value="#{Contact.id}" styleClass="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel value="First Name:" styleClass="control-label" />
+                <div class="col-xs-10">
+                    <h:inputText value="#{Contact.nom}" styleClass="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel value="Last Name :" styleClass="control-label" />
+                <div class="col-xs-10">
+                    <h:inputText value="#{Contact.prenom}" styleClass="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel value="Email:" styleClass="control-label" />
+                <div class="col-xs-10">
+                    <h:inputText value="#{Contact.email}" styleClass="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <h:commandButton value="Save Record" action="#{ContactServices.Ajouter(Contact)}" styleClass="btn btn-primary btn-sm btnPos" />
+                </div>
+            </div>
+        </h:panelGrid>
+    </h:form>
+    </h:body>
+</html>
+
